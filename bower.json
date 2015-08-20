@@ -1,0 +1,19 @@
+{
+  "name": "node-xls-download",
+  "version": "0.0.0",
+  "authors": [
+    "gbahamondez <gonzalo.bahamondez.c@gmai.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendors",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "file-saver.js": "~1.20150507.2"
+  }
+}

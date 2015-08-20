@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Download xml test</title>
+    <script src="/vendors/file-saver.js/FileSaver.js"></script>
+  </head>
+  <body>
+
+    <form id="form" method="post" action="/download">
+      <button type="submit">Download Test Excel</button>
+    </form>
+
+    <script type="text/javascript">
+
+      form.addEventListener('submit', submitCallback);
+
+      function submitCallback(e) {
+
+        var xhr = new XMLHttpRequest();
+
+        xhr.open('POST', '/download', true);
+        xhr.responseType = 'arraybuffer';
+
+        xhr.onload = function(e) {
+          if (this.status == 200) {
+            console.log(xhr.response);
+            saveAs(new Blob([xhr.response], {type:""}), "test.xlsx")
+          }
+        };
+
+        xhr.send();
+
+        event.preventDefault();
+      };
+    </script>
+
+  </body>
+</html>
